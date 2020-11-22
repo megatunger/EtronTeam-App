@@ -11,7 +11,7 @@ class ModalQuestion extends StatefulWidget {
 class _ModalQuestionState extends State<ModalQuestion> {
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(Duration(seconds: 2), () {
       Navigator.of(context).pop();
     }); // TODO: implement initState
     super.initState();

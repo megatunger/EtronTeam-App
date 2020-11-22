@@ -1,5 +1,7 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:etron_app/bloc/etron_bloc.dart';
 import 'package:etron_app/model/missing_fields_data.dart';
+import 'package:etron_app/model/question_answer_request.dart';
 import 'package:etron_app/ui/components/primary_button.dart';
 import 'package:etron_app/ui/pending_questions/camera_view.dart';
 import 'package:etron_app/ui/pending_questions/interview_done.dart';
@@ -83,6 +85,10 @@ class _QuestionRecorderState extends State<QuestionRecorder> {
                   title: 'Đã trả lời xong câu hỏi này',
                   icon: Icons.cloud_upload_rounded,
                   callback: () {
+                    etronBloc.answerQuestion(QuestionAnswerRequest(
+                        email: this.widget.missingFields.email,
+                        field: this.widget.missingFields.missingFields[0].field,
+                        answer: recognizedText));
                     var _nextData = this.widget.missingFields;
                     if (_nextData.missingFields.length != 1) {
                       _nextData.missingFields.removeAt(0);
@@ -93,6 +99,7 @@ class _QuestionRecorderState extends State<QuestionRecorder> {
                                 StartInterviewWidget(missingFields: _nextData)),
                       );
                     } else {
+                      etronBloc.done(this.widget.missingFields.email);
                       Navigator.of(context).pop();
                       Navigator.pushReplacement(
                         context,
