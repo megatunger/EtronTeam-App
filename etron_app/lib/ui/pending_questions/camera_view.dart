@@ -46,7 +46,8 @@ class _CameraViewState extends State<CameraView> {
 
   initCamera() async {
     cameras = await availableCameras();
-    controller = CameraController(cameras[1], ResolutionPreset.medium);
+    controller = CameraController(cameras[1], ResolutionPreset.medium,
+        enableAudio: false);
     controller.initialize().then((_) {
       if (!mounted) {
         return;

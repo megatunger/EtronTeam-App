@@ -1,5 +1,10 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:etron_app/model/missing_fields_data.dart';
+import 'package:etron_app/ui/components/primary_button.dart';
 import 'package:etron_app/ui/pending_questions/camera_view.dart';
+import 'package:etron_app/ui/pending_questions/interview_done.dart';
+import 'package:etron_app/ui/pending_questions/modal_question.dart';
+import 'package:etron_app/ui/pending_questions/start_interview_widget.dart';
 import 'package:etron_app/ui/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
@@ -18,6 +23,7 @@ class _QuestionRecorderState extends State<QuestionRecorder> {
   ServiceAccount serviceAccount;
   SpeechToText speechToText;
   RecorderStream _recorder = RecorderStream();
+  var recognizedText = '';
 
   final streamingConfig = StreamingRecognitionConfig(
       config: RecognitionConfig(
@@ -30,7 +36,20 @@ class _QuestionRecorderState extends State<QuestionRecorder> {
 
   @override
   void initState() {
-    // loadAccount();
+    loadAccount();
+    Future.delayed(Duration(milliseconds: 800), () {
+      showModalBottomSheet<void>(
+        context: context,
+        shape: RoundedRectangleBorder(borderRadius: EtronTheme.roundedBorder),
+        builder: (BuildContext context) {
+          return Container(
+              height: 300,
+              child: ModalQuestion(
+                missingField: this.widget.missingFields.missingFields[0],
+              ));
+        },
+      );
+    });
     super.initState();
   }
 
@@ -42,7 +61,50 @@ class _QuestionRecorderState extends State<QuestionRecorder> {
           elevation: EtronTheme.elevation,
           backgroundColor: EtronTheme.primaryColor,
         ),
-        body: CameraView());
+        body: ListView(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Flash(
+                  child: Icon(Icons.video_call_rounded,
+                      size: 64, color: Colors.red),
+                  infinite: true,
+                  duration: Duration(seconds: 1)),
+            ),
+            CameraView(),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text('$recognizedText',
+                  style: Theme.of(context).textTheme.headline6),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: PrimaryButton(
+                  title: 'Đã trả lời xong câu hỏi này',
+                  icon: Icons.cloud_upload_rounded,
+                  callback: () {
+                    var _nextData = this.widget.missingFields;
+                    if (_nextData.missingFields.length != 1) {
+                      _nextData.missingFields.removeAt(0);
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                StartInterviewWidget(missingFields: _nextData)),
+                      );
+                    } else {
+                      Navigator.of(context).pop();
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => InterviewDone()),
+                      );
+                    }
+                  }),
+            ),
+            SizedBox(height: 32)
+          ],
+        ));
   }
 
   loadAccount() async {
@@ -54,15 +116,16 @@ class _QuestionRecorderState extends State<QuestionRecorder> {
       final responseStream = speechToText.streamingRecognize(
           streamingConfig, _recorder.audioStream);
       responseStream.listen((data) {
-        print(data.results[0].alternatives[0].transcript);
+        print(data);
+        setState(() {
+          recognizedText = data.results[0].alternatives[0].transcript;
+        });
       });
     });
   }
 
   @override
   void dispose() {
-    _recorder.stop();
-    _recorder.dispose();
     super.dispose();
   }
 }

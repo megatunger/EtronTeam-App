@@ -61,6 +61,7 @@ flutter:
   assets:
     - assets/illustration/urban-409.png
     - assets/illustration/urban-686.png
+    - assets/illustration/urban-199.png
     - assets/illustration/giphy.gif
     - assets/careerplannerapi-1603532127051-2390496eadbe.json
   # An image asset can refer to one or more resolution-specific "variants", see
