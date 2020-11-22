@@ -34,8 +34,14 @@ dependencies:
   permission_handler: ^5.0.1+1
   dio: ^3.0.10
   url_launcher: ^5.7.10
-  firebase_core: ^0.5.2
   camera: ^0.5.8+11
+  animate_do: ^1.7.3
+  google_fonts: ^1.1.1
+  file_picker: ^2.1.0
+  circular_countdown_timer: ^0.0.7
+  google_speech: ^1.2.1
+  sound_stream: ^0.2.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -52,10 +58,11 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
-
+  assets:
+    - assets/illustration/urban-409.png
+    - assets/illustration/urban-686.png
+    - assets/illustration/giphy.gif
+    - assets/careerplannerapi-1603532127051-2390496eadbe.json
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "careerplannerapi-1603532127051",
+  "private_key_id": "2390496eadbe8972158c7bbb8f22b83f4ca7eab5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQClQasf7YcST6NR\nUYfsBAQTxoMaOco1OJoo2veWrb3a5ZhTjWKVbZ7kuRtSBYiI8aMHRzBN+5TKdGxy\nu3LowqVIpq7NQ6JWZGsD9hmoA/Ex+ud94RJ72BvkbCDYPHtZJ5P85NouOmeEW85W\n0NACrjP25s9nCARXr4Vu2TayUpj2yX3Ez+aiOG8fTl/wNFWBR3otMwrK7ZlS72nh\ncUbiCw1500ujw/EQVxqZpk9YffiBl+s1us6G7TG9FSsUhcxCew91qVStnZybOeu+\n6ydWkbNAcS+u/+6OyTsiHgpq44CJksx8LnORUz0fSeHD5LfEbol7q0BaaHjzgGoJ\n/AO6Jgs/AgMBAAECggEAPaLaDA0AKXS5kb1qiD1RNfz+7fuq7yG+4ckVukXv/2JN\n56/emqQptN5TkcqNi6Iwb6j+G7/fVYmJ31sJt0XN9uRwYw+8TyOiBHa4SAG8ZqtR\nxxH43mcStCYeM/iO+wg3eoXy2HYhIO1K7vdv9ef6arbYmXGUiQ3moxrx+x2yfqy7\niVVNoOyDMgDj/eGnd9sLr60Drvlr5eNRaQcbR/+LUo+CZAtrhWfni8V6U1ZUkjYf\nn+ftvZQGGXwdmC1Hc0gyJCZ/qh+bJq7EDwGOSuB8Knap9Qnv7IcxAtYrNzMAV4F9\nWOd8fLRYp33pk+gtAjGqv2Lhbo5gH0T7GO6+vL/WgQKBgQDZWtl7UVsbtL62Zl7z\nzLhLn6ujIfUz/ItEZ2BOXx3HRdxVEiG5GbJH0uB8cfWheOQWCz40x6ITTk+/X21e\nsEMCKwwgXbUxShGjCcWKo6DcjqU9QQW+Cgp0GLM0WhA2lcZ9IBR06Y1zEX3rXVlg\nQaqbjgDIHxA6IW9z3ixLPgNygQKBgQDCo4DumB31o8EJsyoJnZ4lw3lTRNtFeu4A\nSHnQZJvlBuU023X0Bqx6zjgJnTVjdGagYDacwhjzYf83Q+8/DzF8bxctJwidsJQ1\nBT/deITMIK7Ht9G4w40nxt0qZDspNUBusPY66m+TcC493FKOsfHpjNBzzr2HeJ6Q\nopFh/hsdvwKBgHUdx8vz1WTDanO8C3PQnolZGtHG7Wm6rYwJK9Ju3AvQ790C7Rrg\n5rhev0ku2ozMKBJcsoMcAo/mhX/3umXoEeMsMNeLxqMtZv1zuXZvnrDZR94OmDqD\nDIjr+ju+P7g50f7/9yXb5rTW+wOEhDEikPxKcs9iNYstEvHbCADvBEqBAoGAe3iJ\nQ9IPv1HAFU0or6zjNAWKo34cszjGXjubusz38BOttxg4/TJ2m/jRp5eo1Ix0xewC\n+PJQLaTO59oanSAgPlWimCwY1R+9BN1tpCrd4zggZ+V+Dv1OQBtxFYE73mo/k3iC\n2uD5IsiZLPjlDkxnr8Z6Pdy6coPb4tid7VHrFbUCgYEAg/UfzNQLdLxXWaaIZX6T\nN6DWE1sYMStZuUarZbtcZKqKKOEq7Qm5Pcq+40sLb6qVFwL5EIM98sKsWuY9aMMt\n8Cb2NWRfxj4GQ/yJ5VNPSSYLaR0TSqzZVIBxmRUnqkshlajCEkBVwmhflOHSqoPX\nUnU6Ws5U+3ornP/CrV+LfAc=\n-----END PRIVATE KEY-----\n",
+  "client_email": "emulators@careerplannerapi-1603532127051.iam.gserviceaccount.com",
+  "client_id": "101621974476927747579",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/emulators%40careerplannerapi-1603532127051.iam.gserviceaccount.com"
+}
